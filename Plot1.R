@@ -1,0 +1,6 @@
+source("ReadCleanData.R")
+mydata <- ReadCleanData()
+png(filename = "plot1.png", width = 480, height = 480, units = "px")
+mydata$Global_active_power <- as.numeric(mydata$Global_active_power)
+hist(mydata$Global_active_power, col = "red", xlab = "Global Active Power (kilowatts)", main = "Global Active Power")
+dev.off()
